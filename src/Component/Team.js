@@ -188,6 +188,7 @@ class Team extends Component {
         .then(() =>
           alert("success! created team at: " + Date(Date.now()).toString())
         );
+      location.reload();
     } else {
       alert("make sure all roles are filled.");
     }
@@ -270,6 +271,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeTop()}
             >
+              <h2 className="position">Top</h2>
               <h3 className="champName">{this.state.top.name}</h3>
             </div>
             <div
@@ -281,6 +283,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeJun()}
             >
+              <h2 className="position">Jungle</h2>
               <h3 className="champName">{this.state.jun.name}</h3>
             </div>
             <div
@@ -292,6 +295,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeMid()}
             >
+              <h2 className="position">Mid</h2>
               <h3 className="champName">{this.state.mid.name}</h3>
             </div>
             <div
@@ -303,6 +307,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeBot()}
             >
+              <h2 className="position">ADC</h2>
               <h3 className="champName">{this.state.bot.name}</h3>
             </div>
             <div
@@ -314,6 +319,7 @@ class Team extends Component {
               }}
               onClick={() => this.placeSup()}
             >
+              <h2 className="position">Support</h2>
               <h3 className="champName">{this.state.sup.name}</h3>
             </div>
           </div>
@@ -324,6 +330,28 @@ class Team extends Component {
             scales={3}
             className="chart"
           />
+          <div className="stats">
+            <div className="stat">
+              <p className="label">Attack</p>
+              <p className="value">
+                {Math.floor(this.state.data[0].data.attack * 45)}
+              </p>
+            </div>
+            <div className="stat">
+              <p className="label">Magic</p>
+              <p className="value">
+                {" "}
+                {Math.floor(this.state.data[0].data.magic * 45)}
+              </p>
+            </div>
+            <div className="stat">
+              <p className="label">Defense</p>
+              <p className="value">
+                {" "}
+                {Math.floor(this.state.data[0].data.defense * 45)}
+              </p>
+            </div>
+          </div>
           <div className="">
             <h4>Team Name</h4>
             <input onInput={this.handleInputChange} className="lol-style" />

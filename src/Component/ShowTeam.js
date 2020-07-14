@@ -4,6 +4,12 @@ import "react-svg-radar-chart/build/css/index.css";
 import "./ShowTeam.css";
 import Axios from "axios";
 
+const captions = {
+  // columns
+  attack: "Attack",
+  defense: "Defense",
+  magic: "Magic"
+};
 class ShowTeam extends Component {
   delete(that) {
     Axios.delete(
@@ -12,118 +18,113 @@ class ShowTeam extends Component {
       .then(res => {
         console.log({ res });
         alert("deleted!");
+        location.reload();
       })
       .catch(error => console.error(error));
   }
+  componentDidMount() {
+    console.log(this.props);
+  }
   render() {
-    let teams;
-    if (this.props.teams && this.props.champions) {
-      teams = this.props.teams.map(each => {
-        let topchamp = this.props.champions.filter(
-          eachchamp => eachchamp._id === each.top
-        );
-        let jgchamp = this.props.champions.filter(
-          eachchamp => eachchamp._id === each.jun
-        );
-        let midchamp = this.props.champions.filter(
-          eachchamp => eachchamp._id === each.mid
-        );
-        let adcchamp = this.props.champions.filter(
-          eachchamp => eachchamp._id === each.bot
-        );
-        let supchamp = this.props.champions.filter(
-          eachchamp => eachchamp._id === each.sup
-        );
-        let date;
-        if (this.props.creation) {
-          date = this.props.creation.filter(
-            eachchamp => eachchamp._id === each.creation
-          );
-          if (date === undefined) {
-            date = "Unknown";
-          }
-        } else {
-          date = "Unknown";
-        }
-
-        const data = [
-          {
-            data: {
-              attack: each.attack / 45,
-              defense: each.defense / 45,
-              magic: each.magic / 45
-            },
-            meta: { color: "#0df" }
-          }
-        ];
-
-        const captions = {
-          // columns
-          attack: "Attack",
-          defense: "Defense",
-          magic: "Magic"
-        };
-
-        return (
-          <div key={each._id} className="team_wrapper">
-            <h3>{each.name}</h3>
-            <div className="teamiconcontain">
-              <img
-                alt={topchamp[0].name}
-                className="teamicons"
-                src={topchamp[0].icon}
-              />
-              <img
-                alt={jgchamp[0].name}
-                className="teamicons"
-                src={jgchamp[0].icon}
-              />
-              <img
-                alt={midchamp[0].name}
-                className="teamicons"
-                src={midchamp[0].icon}
-              />
-              <img
-                alt={adcchamp[0].name}
-                className="teamicons"
-                src={adcchamp[0].icon}
-              />
-              <img
-                alt={supchamp[0].name}
-                className="teamicons"
-                src={supchamp[0].icon}
-              />
-            </div>
-            <RadarChart
-              captions={captions}
-              data={data}
-              size={300}
-              scales={3}
-              className="chart"
-            />
-            <p>Created: {date}</p>
-            <div className="button">
-              <button className="lol-style">Edit</button>
-              <button
-                className="lol-style"
-                name={each._id}
-                onClick={this.delete}
-              >
-                Delete
-              </button>
-            </div>
+    if (
+      this.props.teams.length > 0 &&
+      this.props.champions.filter(champ => champ !== undefined)
+    ) {
+      return (
+        <div className="ah">
+          <h1>Teams</h1>
+          <div className="team_main">
+            {this.props.teams.map(team => (
+              <div className="team_wrapper">
+                <h1>{team.name}</h1>
+                <div className="icons">
+                  <img
+                    className="teamicon"
+                    src={
+                      this.props.champions.filter(
+                        champ => champ._id === team.top
+                      )[0].icon
+                    }
+                    alt="champimg"
+                  />
+                  <img
+                    className="teamicon"
+                    src={
+                      this.props.champions.filter(
+                        champ => champ._id === team.jun
+                      )[0].icon
+                    }
+                    alt="champimg"
+                  />
+                  <img
+                    className="teamicon"
+                    src={
+                      this.props.champions.filter(
+                        champ => champ._id === team.mid
+                      )[0].icon
+                    }
+                    alt="champimg"
+                  />
+                  <img
+                    className="teamicon"
+                    src={
+                      this.props.champions.filter(
+                        champ => champ._id === team.bot
+                      )[0].icon
+                    }
+                    alt="champimg"
+                  />
+                  <img
+                    className="teamicon"
+                    src={
+                      this.props.champions.filter(
+                        champ => champ._id === team.sup
+                      )[0].icon
+                    }
+                    alt="champimg"
+                  />
+                </div>
+                <RadarChart
+                  captions={captions}
+                  data={[
+                    {
+                      data: {
+                        attack: team.attack / 45,
+                        defense: team.defense / 45,
+                        magic: team.magic / 45
+                      },
+                      meta: { color: "#0df" }
+                    }
+                  ]}
+                  size={300}
+                  scales={3}
+                  className="chart"
+                />
+                <p>Created: {team.creation.substr(4, 11)}</p>
+                <button
+                  className="lol-style"
+                  name={team._id}
+                  onClick={this.delete}
+                >
+                  Delete
+                </button>
+              </div>
+            ))}
           </div>
-        );
-      });
+        </div>
+      );
+    } else {
+      return (
+        <div className="ah">
+          <h1>No teams available</h1>
+          <p>
+            It seems like all the teams have been deleted. If you tried posting
+            a team and it is not showing here please post a github issue{" "}
+            <a href="https://github.com/majicmaj/lol-client/issues">Here</a>
+          </p>
+        </div>
+      );
     }
-
-    return (
-      <div className="team_main">
-        <h1>Saved Teams</h1>
-        {teams}
-      </div>
-    );
   }
 }
-
 export default ShowTeam;

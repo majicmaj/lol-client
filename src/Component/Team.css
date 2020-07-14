@@ -1,91 +1,129 @@
 .icon {
-    width: 128px;
-    height: 128px;
-    background-size: cover;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border: 1px solid #fb0;
+  width: 128px;
+  height: 128px;
+  background-size: cover;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid #fb0;
 }
 
 .icon:hover {
-    border: 1px solid #ff0;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
+  border: 1px solid #ff0;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
 }
 
 .team {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    max-width: 1024px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1024px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .team_main {
-    background: #001;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: #001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team_builder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1024px;
 }
 
 .team_picker {
-    margin-top: 40px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  margin-top: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
 }
 
 .champName {
-    position: relative;
-    top: 52px;
-    font-size: 18px;
+  position: relative;
+  top: 38px;
+  margin: 0;
+  height: 0;
+}
+.position {
+  position: relative;
+  top: 8px;
+  margin: 0;
+  height: 0;
 }
 
 .champStats {
-    position: relative;
-    top: 15px;
-    font-size: 14px;
+  position: relative;
+  top: 15px;
+  font-size: 14px;
 }
-
+.stats {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #013;
+  border-radius: 8px;
+  box-shadow: 2px 2px 12px #00000030;
+}
+.stat {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+}
+.stat .label {
+  font-weight: bold;
+  color: #fb0;
+  margin: 0;
+  height: 30px;
+}
+.stat .value {
+  font-weight: bold;
+  color: #eee;
+  font-size: 28px;
+  margin: 0;
+  height: 30px;
+}
 .scale {
-    fill: #013 !important; 
-    stroke: #335 !important;
-    stroke-width: 1 !important;
+  fill: #013 !important;
+  stroke: #335 !important;
+  stroke-width: 1 !important;
 }
 svg {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 .caption {
-    font-size: 12px;
-    fill: #999 !important;
+  font-size: 12px;
+  fill: #999 !important;
 }
 @media only screen and (max-width: 768px) {
-    .team_main {
-        padding: 10px;
-    }
-    .icon {
-        width: 64px;
-        height: 64px;
-        padding: 0px;
-        margin: 0px;
-    }
-    .team_picker {
-        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-    }
-    .champName, .champStats {
-        display: none;
-    }
-    svg {
-        margin-top: 10px;
-    }
+  .team_main {
+    padding: 10px;
+  }
+  .icon {
+    width: 64px;
+    height: 64px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .team_picker {
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  }
+  .champName,
+  .champStats {
+    display: none;
+  }
+  svg {
+    margin-top: 10px;
+  }
 }
