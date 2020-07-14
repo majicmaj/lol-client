@@ -18,7 +18,7 @@ class ShowTeam extends Component {
       .then(res => {
         console.log({ res });
         alert("deleted!");
-        location.reload();
+        window.location.reload();
       })
       .catch(error => console.error(error));
   }

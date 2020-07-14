@@ -34,6 +34,7 @@ class Team extends Component {
   }
   handleClick = champion => {
     this.setState({ champion: champion });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   placeTop = () => {
@@ -52,6 +53,8 @@ class Team extends Component {
         this.updateChart
       );
     }
+
+    window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
   };
   placeMid = () => {
     if (
@@ -69,6 +72,7 @@ class Team extends Component {
         this.updateChart
       );
     }
+    window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
   };
   placeBot = () => {
     if (
@@ -86,6 +90,7 @@ class Team extends Component {
         this.updateChart
       );
     }
+    window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
   };
   placeSup = () => {
     if (
@@ -102,6 +107,8 @@ class Team extends Component {
         },
         this.updateChart
       );
+    } else {
+      window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
     }
   };
   placeJun = () => {
@@ -121,6 +128,7 @@ class Team extends Component {
         this.updateChart
       );
     }
+    window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
   };
 
   handleInputChange = event => {
@@ -188,7 +196,7 @@ class Team extends Component {
         .then(() =>
           alert("success! created team at: " + Date(Date.now()).toString())
         );
-      location.reload();
+      window.location.reload();
     } else {
       alert("make sure all roles are filled.");
     }
