@@ -23,29 +23,36 @@
   /* height: 100vh; */
 }
 
-.logo {
-  background-image: url(./img/icon.png);
-  width: 64px;
-  height: 64px;
-  background-size: cover;
-  display: inline-block;
-}
-
 .navbar {
-  background: #012;
-  max-height: 96px;
-  padding: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #223;
+  align-items: center;
+  padding: 10px 20px;
+  height: min-content;
 }
 
-.navbar h3 {
-  display: inline-block;
-  color: #eee;
-  padding: 8px;
+.navbar .logo {
+}
+.navbar .logo .svg {
+  margin: 0;
+}
+
+.navbar .links {
+  display: flex;
+  font-size: 16px;
+}
+.navbar .link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #00000000;
+}
+.navbar .link:hover {
+  background: #002;
+  border: 1px solid #fb0;
+  box-shadow: 2px 2px 8px #00000030;
 }
 
 .leftnav {
