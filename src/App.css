@@ -1,0 +1,144 @@
+.lol-style {
+  color: #fb0;
+  border: 1px solid #fb0;
+  background-color: rgb(20, 25, 46);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.lol-style:focus {
+  border: 1px solid #ff0;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+  /* height: 100vh; */
+}
+
+.logo {
+  background-image: url(./img/icon.png);
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  display: inline-block;
+}
+
+.navbar {
+  background: #012;
+  max-height: 96px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #223;
+}
+
+.navbar h3 {
+  display: inline-block;
+  color: #eee;
+  padding: 8px;
+}
+
+.leftnav {
+  display: flex;
+}
+
+.allchamcontain {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  /* grid-column-gap: 10px; */
+}
+
+.championdetailmain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80vw;
+  height: 70vh;
+  margin-top: 70px;
+  background-color: rgba(20, 25, 46, 0.801);
+  border-radius: 20px;
+}
+
+.champinfo {
+  width: 500px;
+  height: 400px;
+  text-align: left;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+}
+
+.champfull {
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  border-radius: 10px;
+  border: 5px solid rgba(14, 28, 73, 0.534);
+}
+
+.teamchamp {
+  width: 100px;
+  width: 100px;
+  border-radius: 200px;
+  border: 3px solid rgb(201, 201, 201);
+}
+
+/* showteam/------------------------------ */
+
+.eachteam {
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(20, 25, 46, 0.685);
+}
+
+.teamicons {
+  max-width: 100%;
+}
+
+.teamiconcontain {
+  display: flex;
+}
+
+.button {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button button {
+  width: 120px;
+  height: 60px;
+}
+
+#leageteambuilder {
+  margin-left: 0px;
+}
+
+.teamstats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.displaystats {
+  fill: #335;
+  stroke: #fb0;
+  stroke-width: 1;
+}

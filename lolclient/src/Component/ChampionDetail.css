@@ -1,0 +1,28 @@
+.championdetailmain {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.champfull {
+  min-height: 100%;
+  width: 100%;
+  background-position: center;
+  overflow-y: scroll;
+}
+
+.championdetail_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.champinfo .chart {
+  min-height: 200px;
+  min-width: 200px;
+}
+@media only screen and (max-width: 762px) {
+  .championdetailmain {
+    flex-direction: column;
+  }
+}
