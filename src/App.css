@@ -149,3 +149,19 @@
   stroke: #fb0;
   stroke-width: 1;
 }
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 2px;
+  }
+  .navbar .links {
+    margin: 2px 0;
+    font-size: 14px;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .navbar .links .link {
+    width: ;
+  }
+}

@@ -102,7 +102,7 @@ class ShowTeam extends Component {
                 />
                 <p>Created: {team.creation.substr(4, 11)}</p>
                 <button
-                  className="lol-style"
+                  className="button delete"
                   name={team._id}
                   onClick={this.delete}
                 >

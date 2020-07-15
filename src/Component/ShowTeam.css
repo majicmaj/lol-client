@@ -20,9 +20,22 @@
 }
 
 .button {
-  width: 100%;
-  flex-direction: row;
   height: auto;
+}
+.button.delete {
+  background: inherit;
+  border: 2px solid #fb0;
+  width: min-content;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  height: min-content;
+}
+.button.delete:hover {
+  background: #f55;
+  border: 2px solid #f55;
 }
 
 button.lol-style {
@@ -31,7 +44,7 @@ button.lol-style {
 }
 
 @media only screen and (max-width: 768px) {
-  .teamicons {
+  .teamicon {
     height: 64px;
     width: 64px;
   }

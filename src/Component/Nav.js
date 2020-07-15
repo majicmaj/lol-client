@@ -7,7 +7,7 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navbar">
-        <a className="logo" href="https://www.majdtarbin.com" target="_blank">
+        <a className="logo" href="https://www.majdtarbin.com">
           <Logo className="svg" />
         </a>
 
@@ -22,7 +22,7 @@ class Nav extends Component {
             Champions
           </Link>
         </div>
-        <a className="kofi" href="https://ko-fi.com/Z8Z01WU4W" target="_blank">
+        <a className="kofi" href="https://ko-fi.com/Z8Z01WU4W">
           <img
             height="36"
             src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2"
