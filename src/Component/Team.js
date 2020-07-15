@@ -196,7 +196,7 @@ class Team extends Component {
         .then(() =>
           alert("success! created team at: " + Date(Date.now()).toString())
         );
-      window.location.reload();
+      setTimeout(() => window.location.reload(), 1000);
     } else {
       alert("make sure all roles are filled.");
     }
